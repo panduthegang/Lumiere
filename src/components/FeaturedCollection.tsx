@@ -3,22 +3,22 @@ import { motion } from 'motion/react';
 const perfumes = [
   {
     id: 1,
-    name: 'Oud Nuit',
-    notes: 'Agarwood, Rose, Amber',
+    name: 'Ambre Royal',
+    notes: 'Amber, Vanilla, Precious Woods',
     price: '$280',
     img: '/Product-1.png',
   },
   {
     id: 2,
-    name: 'Santal Blanc',
-    notes: 'Sandalwood, Fig, Cardamom',
+    name: 'Rose de Mai',
+    notes: 'Centifolia Rose, Peony, White Musk',
     price: '$240',
     img: '/Product-2.png',
   },
   {
     id: 3,
-    name: 'Fleur d\'Oranger',
-    notes: 'Orange Blossom, Neroli, Musk',
+    name: 'Nuit d\'Azur',
+    notes: 'Sea Salt, Blue Sage, Bergamot',
     price: '$210',
     img: '/Product-3.png',
   },
