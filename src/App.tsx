@@ -8,21 +8,21 @@ const perfumes = [
     name: 'Oud Nuit',
     notes: 'Agarwood, Rose, Amber',
     price: '$280',
-    img: 'https://images.unsplash.com/photo-1596462502278-27bf8503324e?auto=format&fit=crop&q=80&w=800',
+    img: '/Product-1.png',
   },
   {
     id: 2,
     name: 'Santal Blanc',
     notes: 'Sandalwood, Fig, Cardamom',
     price: '$240',
-    img: 'https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&q=80&w=800',
+    img: '/Product-2.png',
   },
   {
     id: 3,
     name: 'Fleur d\'Oranger',
     notes: 'Orange Blossom, Neroli, Musk',
     price: '$210',
-    img: 'https://images.unsplash.com/photo-1588405748880-12d1d2a59f75?auto=format&fit=crop&q=80&w=800',
+    img: '/Product-3.png',
   },
 ];
 
@@ -51,7 +51,7 @@ export default function App() {
       >
         <div className="w-full max-w-[100rem] mx-auto px-6 md:px-12 lg:px-20 xl:px-24 flex items-center justify-between">
           <div className="flex items-center gap-6">
-            <button className="text-[var(--color-luxury-ink)] hover:opacity-70 transition-opacity">
+            <button className="text-[var(--color-luxury-ink)] transition-opacity">
               <Menu size={20} strokeWidth={1.5} />
             </button>
             <div className="hidden md:flex items-center gap-8 text-[11px] uppercase tracking-[0.15em] font-medium">
@@ -69,12 +69,12 @@ export default function App() {
               <a href="#" className="hover:text-[var(--color-luxury-gold)] transition-colors">Our Story</a>
               <a href="#" className="hover:text-[var(--color-luxury-gold)] transition-colors">Stores</a>
             </div>
-            <button className="text-[var(--color-luxury-ink)] hover:opacity-70 transition-opacity">
+            <button className="text-[var(--color-luxury-ink)] transition-opacity">
               <Search size={20} strokeWidth={1.5} />
             </button>
-            <button className="text-[var(--color-luxury-ink)] hover:opacity-70 transition-opacity relative">
+            <button className="text-[var(--color-luxury-ink)] transition-opacity relative">
               <ShoppingBag size={20} strokeWidth={1.5} />
-              <span className="absolute -top-1 -right-1 bg-[var(--color-luxury-ink)] text-[var(--color-luxury-bg)] text-[9px] w-4 h-4 flex items-center justify-center rounded-full">
+              <span className="absolute -top-1 -right-1 bg-[var(--color-luxury-ink)] text-[var(--color-luxury-bg)] text-[9px] w-4 h-4 flex items-center justify-center rounded-none">
                 0
               </span>
             </button>
@@ -128,7 +128,7 @@ export default function App() {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1, duration: 0.8 }}
-            className="bg-[var(--color-luxury-gold)] text-white group flex items-center gap-4 px-8 py-4 rounded-full text-[11px] uppercase tracking-[0.15em] hover:bg-[var(--color-luxury-ink)] transition-colors duration-500 shadow-xl shadow-[var(--color-luxury-gold)]/20"
+            className="bg-[var(--color-luxury-gold)] text-white group flex items-center gap-4 px-8 py-4 rounded-none text-[11px] uppercase tracking-[0.15em] transition-colors duration-500 shadow-xl shadow-[var(--color-luxury-gold)]/20"
           >
             Discover Lumière
             <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
@@ -147,7 +147,7 @@ export default function App() {
               Our most beloved fragrances, crafted with the finest ingredients sourced from around the globe.
             </p>
           </div>
-          <a href="#" className="hidden md:inline-flex items-center gap-3 bg-[var(--color-luxury-gold)] text-white px-6 py-3 rounded-full text-[10px] uppercase tracking-[0.15em] hover:bg-[var(--color-luxury-ink)] transition-colors duration-500 shadow-lg shadow-[var(--color-luxury-gold)]/20">
+          <a href="#" className="hidden md:inline-flex items-center gap-3 bg-[var(--color-luxury-gold)] text-white px-6 py-3 rounded-none text-[10px] uppercase tracking-[0.15em] transition-colors duration-500 shadow-lg shadow-[var(--color-luxury-gold)]/20">
             View All Fragrances
           </a>
         </div>
@@ -171,7 +171,7 @@ export default function App() {
                 />
                 <div className="absolute inset-0 bg-[var(--color-luxury-ink)]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 <div className="absolute inset-x-0 bottom-0 p-6 flex justify-center opacity-0 group-hover:opacity-100 transition-all duration-700 translate-y-8 group-hover:translate-y-0">
-                  <button className="bg-[var(--color-luxury-gold)] text-white w-full py-4 text-[10px] uppercase tracking-[0.2em] hover:bg-[var(--color-luxury-ink)] transition-colors duration-500 shadow-lg shadow-[var(--color-luxury-gold)]/20">
+                  <button className="bg-[var(--color-luxury-gold)] text-white w-full py-4 text-[10px] uppercase tracking-[0.2em] transition-colors duration-500 shadow-lg shadow-[var(--color-luxury-gold)]/20">
                     Add to Bag
                   </button>
                 </div>
@@ -230,7 +230,7 @@ export default function App() {
               </div>
             </div>
 
-            <button className="bg-[var(--color-luxury-gold)] text-white group flex items-center gap-4 px-8 py-4 rounded-full text-[11px] uppercase tracking-[0.15em] hover:bg-[var(--color-luxury-ink)] transition-colors duration-500 shadow-xl shadow-[var(--color-luxury-gold)]/20 w-fit">
+            <button className="bg-[var(--color-luxury-gold)] text-white group flex items-center gap-4 px-8 py-4 rounded-none text-[11px] uppercase tracking-[0.15em] transition-colors duration-500 shadow-xl shadow-[var(--color-luxury-gold)]/20 w-fit">
               Discover Our Process
               <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
             </button>
@@ -248,7 +248,7 @@ export default function App() {
             </p>
             <div className="flex gap-4">
               {['Instagram', 'Pinterest', 'Journal'].map((social) => (
-                <a key={social} href="#" className="text-[10px] uppercase tracking-widest border border-[var(--color-luxury-ink)]/20 px-4 py-2 rounded-full hover:bg-[var(--color-luxury-ink)] hover:text-[var(--color-luxury-bg)] transition-colors">
+                <a key={social} href="#" className="text-[10px] uppercase tracking-widest border border-[var(--color-luxury-ink)]/20 px-4 py-2 rounded-none transition-colors">
                   {social}
                 </a>
               ))}
