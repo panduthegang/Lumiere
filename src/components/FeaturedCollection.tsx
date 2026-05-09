@@ -1,4 +1,5 @@
 import { motion } from 'motion/react';
+import { useState } from 'react';
 
 const perfumes = [
   {
@@ -22,9 +23,33 @@ const perfumes = [
     price: '$210',
     img: '/Product-3.png',
   },
+  {
+    id: 4,
+    name: 'Violette de Mai',
+    notes: 'Violet, Iris, Cashmere Wood',
+    price: '$240',
+    img: '/Product-4.png',
+  },
+  {
+    id: 5,
+    name: 'Nectar Solaire',
+    notes: 'Bergamot, Solar Musk, Neroli',
+    price: '$190',
+    img: '/Product-5.png',
+  },
+  {
+    id: 6,
+    name: 'Rose Rubis',
+    notes: 'Damask Rose, Saffron, Dark Vanilla',
+    price: '$225',
+    img: '/Product-6.png',
+  },
 ];
 
 export const FeaturedCollection = () => {
+  const [showAll, setShowAll] = useState(false);
+  const visiblePerfumes = showAll ? perfumes : perfumes.slice(0, 3);
+
   return (
     <section className="py-32 px-6 md:px-12 lg:px-20 xl:px-24 max-w-[100rem] mx-auto">
       <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
@@ -36,19 +61,16 @@ export const FeaturedCollection = () => {
             Our most beloved fragrances, crafted with the finest ingredients sourced from around the globe.
           </p>
         </div>
-        <a href="#" className="hidden md:inline-flex items-center gap-3 bg-[var(--color-luxury-gold)] text-white px-6 py-3 rounded-none text-[10px] uppercase tracking-[0.15em] transition-colors duration-500 shadow-lg shadow-[var(--color-luxury-gold)]/20">
-          View All Fragrances
-        </a>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 md:gap-x-12 md:gap-y-16">
-        {perfumes.map((perfume, i) => (
+        {visiblePerfumes.map((perfume, i) => (
           <motion.div 
             key={perfume.id}
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
-            transition={{ delay: i * 0.2, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ delay: (i % 3) * 0.2, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             className="group cursor-pointer flex flex-col"
           >
             <div className="relative aspect-[3/4] overflow-hidden mb-8 bg-[var(--color-luxury-ink)]/5">
@@ -73,6 +95,16 @@ export const FeaturedCollection = () => {
           </motion.div>
         ))}
       </div>
+
+      <div className="mt-20 flex justify-center">
+        <button 
+          onClick={() => setShowAll(!showAll)}
+          className="bg-[var(--color-luxury-gold)] text-white px-10 py-4 rounded-none text-[10px] uppercase tracking-[0.2em] transition-colors duration-500 shadow-lg shadow-[var(--color-luxury-gold)]/20"
+        >
+          {showAll ? 'Show Less' : 'View All Fragrances'}
+        </button>
+      </div>
     </section>
   );
 };
+
