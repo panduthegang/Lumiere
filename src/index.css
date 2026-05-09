@@ -19,3 +19,17 @@ body {
   background-color: var(--color-luxury-gold);
   color: white;
 }
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-luxury-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-luxury-gold);
+  border-radius: 10px;
+}
