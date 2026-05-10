@@ -2,7 +2,7 @@ import { motion } from 'motion/react';
 
 export const Footer = () => {
   return (
-    <footer className="relative overflow-hidden border-t border-[var(--color-luxury-ink)]/10 pt-32 pb-12">
+    <footer className="relative overflow-hidden border-t border-[var(--color-luxury-ink)]/10 pt-20 pb-12">
       {/* Background Image with subtle scale animation */}
       <div className="absolute inset-0 z-0">
         <motion.img

@@ -4,6 +4,7 @@ import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { FeaturedCollection } from './components/FeaturedCollection';
 import { Craftsmanship } from './components/Craftsmanship';
+import { Testimonials } from './components/Testimonials';
 import { Footer } from './components/Footer';
 
 export default function App() {
@@ -25,6 +26,7 @@ export default function App() {
       <Hero y={y} />
       <FeaturedCollection />
       <Craftsmanship />
+      <Testimonials />
       <Footer />
     </div>
   );
