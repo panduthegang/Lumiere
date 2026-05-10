@@ -1,4 +1,4 @@
-import { ShoppingBag, Search, Menu } from 'lucide-react';
+import { motion } from 'motion/react';
 
 interface NavbarProps {
   scrolled: boolean;
@@ -13,37 +13,25 @@ export const Navbar = ({ scrolled }: NavbarProps) => {
           : 'bg-transparent border-transparent py-6'
       }`}
     >
-      <div className="w-full max-w-[100rem] mx-auto px-6 md:px-12 lg:px-20 xl:px-24 flex items-center justify-between">
-        <div className="flex items-center gap-6">
-          <button className="text-[var(--color-luxury-ink)] transition-opacity">
-            <Menu size={20} strokeWidth={1.5} />
-          </button>
-          <div className="hidden md:flex items-center gap-8 text-[11px] uppercase tracking-[0.15em] font-medium">
-            <a href="#" className="hover:text-[var(--color-luxury-gold)] transition-colors">Collections</a>
-            <a href="#" className="hover:text-[var(--color-luxury-gold)] transition-colors">Bespoke</a>
-          </div>
-        </div>
-        
-        <a href="#" className="text-2xl md:text-3xl font-serif tracking-widest text-center absolute left-1/2 -translate-x-1/2">
-          LUMIÈRE
-        </a>
+      {/* Aesthetic shimmer line - only visible when scrolled */}
+      <div className={`absolute bottom-[-1px] left-0 w-full h-[1px] overflow-hidden transition-opacity duration-700 ${scrolled ? 'opacity-100' : 'opacity-0'}`}>
+        <div className="w-full h-full bg-gradient-to-r from-transparent via-[var(--color-luxury-gold)]/40 to-transparent animate-navbar-shimmer"></div>
+      </div>
 
-        <div className="flex items-center gap-6">
-          <div className="hidden md:flex items-center gap-8 text-[11px] uppercase tracking-[0.15em] font-medium">
-            <a href="#" className="hover:text-[var(--color-luxury-gold)] transition-colors">Our Story</a>
-            <a href="#" className="hover:text-[var(--color-luxury-gold)] transition-colors">Stores</a>
-          </div>
-          <button className="text-[var(--color-luxury-ink)] transition-opacity">
-            <Search size={20} strokeWidth={1.5} />
-          </button>
-          <button className="text-[var(--color-luxury-ink)] transition-opacity relative">
-            <ShoppingBag size={20} strokeWidth={1.5} />
-            <span className="absolute -top-1 -right-1 bg-[var(--color-luxury-ink)] text-[var(--color-luxury-bg)] text-[9px] w-4 h-4 flex items-center justify-center rounded-none">
-              0
-            </span>
-          </button>
-        </div>
+      <div className="w-full max-w-[100rem] mx-auto px-6 md:px-12 lg:px-20 xl:px-24 flex flex-col items-center justify-center relative">
+        <a href="#" className="text-xl md:text-2xl font-serif tracking-[0.5em] text-center transition-all duration-500 hover:tracking-[0.6em] hover:opacity-70 leading-none">
+          L U M I È R E
+        </a>
+        <motion.span 
+          initial={{ opacity: 0, y: 5 }}
+          animate={{ opacity: 0.4, y: 0 }}
+          transition={{ delay: 1, duration: 1 }}
+          className="text-[7px] tracking-[0.8em] uppercase mt-2 ml-1"
+        >
+          Paris
+        </motion.span>
       </div>
     </nav>
   );
 };
+

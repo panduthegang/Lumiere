@@ -7,6 +7,13 @@
   --color-luxury-bg: #FAF6F0;
   --color-luxury-ink: #322A25;
   --color-luxury-gold: #C08267;
+
+  --animate-navbar-shimmer: navbar-shimmer 8s infinite linear;
+
+  @keyframes navbar-shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+  }
 }
 
 body {

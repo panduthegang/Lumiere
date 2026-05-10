@@ -10,8 +10,7 @@ export const Craftsmanship = () => {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 1.2, ease: "easeOut" }}
-          className="max-w-md mx-auto lg:max-w-none overflow-hidden"
-          // style={{ clipPath: 'ellipse(50% 50% at 50% 50%)' }}
+          className="max-w-md mx-auto lg:max-w-none overflow-hidden rounded-tr-[180px] rounded-bl-[40px] shadow-2xl shadow-[var(--color-luxury-ink)]/5"
         >
           <img 
             src="/Art-Section.png" 
